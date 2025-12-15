@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KU NUR EMYLIA AFRINA | Agrotechnology Plant Science</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Reset and Global Styles */
+        :root {
+            --color-background: #f4f7f9; /* Soft Grey Background */
+            --color-card-bg: #ffffff;    /* White Card Background */
+            --color-text-primary: #1f2937; /* Dark Grey Text */
+            --color-text-secondary: #6b7280; /* Medium Grey Text */
+            --color-accent: #004d99;     /* Deep Ocean Blue (UMT Theme) */
+            --color-border: #e5e7eb;     /* Light Grey Border */
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-background);
+            color: var(--color-text-primary);
+            padding: var(--spacing-unit);
+            line-height: 1.6;
+        }
+
+        /* --- Grid Layout Container (Desktop) --- */
+        .dashboard-grid {
+            display: grid;
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Define the Grid Template for Desktop */
+        @media (min-width: 768px) {
+            .dashboard-grid {
+                grid-template-columns: 2fr 1fr 1fr;
+                grid-template-rows: auto auto auto;
+                grid-template-areas:
+                    "profile location tech-stack"
+                    "profile case-study hobby"
+                    "playlist playlist playlist";
+            }
+            
+            /* Assign Grid Areas */
+            #card-1 { grid-area: profile; }
+            #card-2 { grid-area: location; }
+            #card-3 { grid-area: tech-stack; }
+            #card-4 { grid-area: case-study; }
+            #card-5 { grid-area: hobby; }
+            #card-6 { grid-area: playlist; }
+        }
+
+        /* --- Card Styling --- */
+        .card {
+            background-color: var(--color-card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--color-border);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--color-accent); /* Titles use the accent color */
+        }
+
+        .card p, .card ul {
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+        }
+
+        .card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        /* Specific Card Styling */
+        #card-1 h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--color-text-primary);
+        }
+        #card-1 .details {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: var(--color-accent);
+        }
+        #card-1 .tagline {
+            font-style: italic;
+            font-size: 1.15rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-text-primary);
+        }
+        .social-links a {
+            display: inline-block;
+            margin-right: 1rem;
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .social-links a:hover {
+            color: var(--color-accent);
+        }
+
+        /* Card 2: Location */
+        #card-2 .time {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--color-text-primary);
+        }
+        #card-2 .campus {
+            font-size: 1.1rem;
+            margin-top: 0.25rem;
+            color: var(--color-text-secondary);
+        }
+
+        /* Card 3: Tech Stack / Subjects */
+        .subject-list li {
+            padding: 0.3rem 0;
+            border-bottom: 1px dashed var(--color-border);
+            color: var(--color-text-primary); 
+        }
+        .subject-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Card 5: Hobby */
+        #card-5 p {
+            font-size: 1rem;
+            color: var(--color-text-primary);
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-grid">
+
+        <div id="card-1" class="card">
+            <header>
+                <h1>KU NUR EMYLIA AFRINA BINTI KU ABDULLAH</h1>
+                <p class="details">
+                    Program: **Agrotechnology Plant Science** | Year: **Year 1**
+                </p>
+                <p class="tagline">
+                    "Innovating Plant Growth Through Modern Agrotechnology"
+                </p>
+            </header>
+            
+            <div class="social-links">
+                <h2>Access Links</h2>
+                <a href="#">LinkedIn</a>
+                <a href="#">GitHub</a>
+                <a href="#">UMT Portal</a>
+            </div>
+        </div>
+
+        <div id="card-2" class="card">
+            <h2>🌍 Current Location</h2>
+            <p class="campus">UMT, Kuala Nerus</p>
+            <p class="time" style="margin-top: 0.5rem;">
+                11:32 AM
+            </p>
+        </div>
+
+        <div id="card-3" class="card">
+            <h2>📚 Year 1 Core Subjects</h2>
+            <ul class="subject-list">
+                <li>Plant Microbiology</li>
+                <li>Basic Soil Science</li>
+                <li>Computer Systems and Applications</li>
+                <li>Ethics and Civilization / Integrity and Anti-Corruption</li>
+                <li>Fundamentals of Entrepreneurship</li>
+            </ul>
+        </div>
+
+        <div id="card-4" class="card">
+            <h2>🌱 Current Research Focus</h2>
+            <h3>The role of Plant Agrotechnology in improving Agricultural Productivity</h3>
+            <p>An initial look into modern farming techniques, including precision irrigation and crop monitoring, crucial for sustainable output.</p>
+            <a href="#" style="color: var(--color-accent); font-weight: 600; text-decoration: none; display: block; margin-top: 0.5rem;">View Introductory Paper &rarr;</a>
+        </div>
+
+        <div id="card-5" class="card">
+            <h2>😴 Wellbeing Activity</h2>
+            <p><strong>Sleep</strong></p>
+            <p style="color: var(--color-text-secondary);">Prioritizing high-quality rest is fundamental for memory consolidation and academic success.</p>
+        </div>
+
+        <div id="card-6" class="card">
+            <h2>🎧 Study & Research Soundtrack</h2>
+            <p>Currently listening to: **Focus Deep Work Playlist**</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
