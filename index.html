@@ -1,28 +1,201 @@
-<a href="#" target="_blank" class="social-button">
-    </a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Professional Portfolio</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-<a href="#" target="_blank" class="social-button">
-    </a>
-<div class="card reflection-card">
-    <h3 class="card-title">Why Food Tech Matters in Malaysia</h3>
-    <p class="card-content">
-        Sustainable food security is crucial for our future. By optimizing local processing methods, we can reduce waste and improve nutrition.
-    </p>
-</div>
-/* Select all your card elements (assuming they have the class 'card') */
-.card {
-    /* 1. Add a smooth transition for the effect */
-    transition: transform 0.3s ease-in-out;
-    
-    /* 2. Optional: Add a subtle box-shadow for depth when not hovering */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f9;
+        }
 
-/* Define the effect that happens ON HOVER */
-.card:hover {
-    /* Scale the card up by 3% (1.03) */
-    transform: scale(1.03);
-    
-    /* Optional: Enhance the shadow on hover to make it feel lifted */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
+        /* Navigation */
+        nav {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        header h1 { font-size: 3.5rem; margin-bottom: 10px; }
+        header p { font-size: 1.5rem; }
+
+        /* Sections */
+        section {
+            padding: 80px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            color: #2c3e50;
+        }
+
+        /* Project Grid */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 { margin-bottom: 10px; color: #3498db; }
+
+        /* Contact Form */
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        input, textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover { background: #2980b9; }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #2c3e50;
+            color: white;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            nav ul { display: none; } /* Simplified for this example */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">MyBrand</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header id="home">
+        <h1>Hi, I'm [Your Name]</h1>
+        <p>Full Stack Developer | Designer | Problem Solver</p>
+    </header>
+
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <p>I am a passionate creator with experience in building digital solutions. I love turning complex problems into simple, beautiful, and intuitive designs. When I'm not coding, you can find me exploring new technologies or contributing to open-source projects.</p>
+    </section>
+
+    <section id="projects" style="background: #ecf0f1;">
+        <h2 class="section-title">My Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>E-Commerce App</h3>
+                <p>A full-featured online store with payment integration and user authentication.</p>
+            </div>
+            <div class="project-card">
+                <h3>Weather Dashboard</h3>
+                <p>Real-time weather tracking using OpenWeather API and interactive maps.</p>
+            </div>
+            <div class="project-card">
+                <h3>Task Manager</h3>
+                <p>A productivity tool designed to help teams collaborate on daily tasks effectively.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 [Your Name]. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
