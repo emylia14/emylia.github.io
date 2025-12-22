@@ -3,201 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emylia Afrina</title>
+    <title>Student Portfolio | Bento Grid</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Base Styles */
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --accent: #3b82f6; /* Scientific Blue */
+            --border: #e2e8f0;
+            --radius: 20px;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f4f9;
-        }
-
-        /* Navigation */
-        nav {
-            background: #2c3e50;
-            color: white;
-            padding: 1rem 2rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            z-index: 1000;
+            min-height: 100vh;
+            padding: 20px;
         }
 
-        nav ul {
+        /* Grid Container */
+        .bento-grid {
+            display: grid;
+            width: 100%;
+            max-width: 1000px;
+            gap: 16px;
+            /* Desktop Layout Definition */
+            grid-template-areas: 
+                "profile profile location"
+                "profile profile tech"
+                "study hobby tech"
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto auto auto auto;
+        }
+
+        /* Base Card Styling */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+        }
+
+        h2 { font-size: 1.25rem; margin-bottom: 8px; font-weight: 700; }
+        p { color: var(--text-muted); line-height: 1.5; font-size: 0.95rem; }
+        .label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); font-weight: 600; margin-bottom: 8px; display: block; }
+
+        /* Area Assignments */
+        .profile {}
+        .location { Universiti Malaysia Terengganu (UMT) Kuala Nerus, Terengganu  }
+        .tech { grid-area: tech; }
+        .subjects & Skills }
+        .hobby { Sleep}
+       
+
+        /* Specific Card Styles */
+        .profile .avatar {
+            width: 60px;
+            height: 60px;
+            background: var(--accent);
+            border-radius: 50%;
+            margin-bottom: 16px;
+        }
+
+        .social-links {
+            margin-top: 20px;
             display: flex;
-            list-style: none;
+            gap: 12px;
         }
 
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            color: white;
+        .social-links a {
             text-decoration: none;
-            font-weight: bold;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            padding: 6px 12px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
         }
 
-        /* Hero Section */
-        header {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
+        .social-links a:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .tag-list {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .tag {
+            background: #f1f5f9;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+        }
+
+        .music-bar {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .play-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--accent);
+            display: flex;
             justify-content: center;
             align-items: center;
             color: white;
-            text-align: center;
         }
 
-        header h1 { font-size: 3.5rem; margin-bottom: 10px; }
-        header p { font-size: 1.5rem; }
-
-        /* Sections */
-        section { subject & Skills 
-            padding: 80px 20px;
-            max-width: 1100px;
-            margin: auto; Soil science 
-                 Microbiology
-                 Lab analysis 
-        }
-
-        .section-title {Location 
-            text-align: center; Universiti Malaysia Terengganu(UMT) Kuala Nerus, Terengganu 
-            margin-bottom: 40px;
-            font-size: 2rem;
-            color: #2c3e50;
-        }
-        .section-title { Why argotechnology Plant Science are important in Malaysia 
-            text-align: center; agrotechnology plant science are important to increase agricultural yield and ensure food security. 
-            margin-bottom: 40px;
-            font-size: 2rem;
-            color: #2c3e50;
-
-        /*section title*/
-        .project-grid {Hobby 
-            display: grid; Sleep 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .project-card h3 { margin-bottom: 10px; color: #3498db; }
-
-        /* Contact Form */
-        form {
-            display: flex;
-            flex-direction: column;
-            max-width: 600px;
-            margin: auto;
-        }
-
-        input, textarea {
-            margin-bottom: 15px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        button {
-            padding: 10px;
-            background: #3498db;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        button:hover { background: #2980b9; }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #2c3e50;
-            color: white;
-        }
-
-        /* Mobile Responsive */
+        /* Mobile Responsive Adjustments */
         @media (max-width: 768px) {
-            header h1 { font-size: 2.5rem; }
-            nav ul { display: none; } /* Simplified for this example */
+            .bento-grid {
+                grid-template-areas: 
+                    "profile"
+                    "location"
+                    "tech"
+                    "study"
+                    "hobby"
+                    "playlist";
+                grid-template-columns: 1fr;
+            }
+            body { padding: 10px; }
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">MyBrand</div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <header id="home">
-        <h1>Hi, I'm [Your Name]</h1>
-        <p>Full Stack Developer | Designer | Problem Solver</p>
-    </header>
-
-    <section id="about">
-        <h2 class="section-title">About Me</h2>
-        <p>I am a passionate creator with experience in building digital solutions. I love turning complex problems into simple, beautiful, and intuitive designs. When I'm not coding, you can find me exploring new technologies or contributing to open-source projects.</p>
-    </section>
-
-    <section id="projects" style="background: #ecf0f1;">
-        <h2 class="section-title">My Projects</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <h3>E-Commerce App</h3>
-                <p>A full-featured online store with payment integration and user authentication.</p>
+    <main class="bento-grid">
+        
+        <section class="card profile">
+            <div class="avatar"></div>
+            <span class="label">Available for projects</span>
+            <h2>[Ku Nur Emylia Afrina]</h2>
+            <p>Agrotechnology Plant Science Student <br> </p>
+            <div class="social-links">
+                <a href="#">GitHub</a>
+                <a href="#">UMT Portal</a>
             </div>
-            <div class="project-card">
-                <h3>Weather Dashboard</h3>
-                <p>Real-time weather tracking using OpenWeather API and interactive maps.</p>
-            </div>
-            <div class="project-card">
-                <h3>Task Manager</h3>
-                <p>A productivity tool designed to help teams collaborate on daily tasks effectively.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact">
-        <h2 class="section-title">Get In Touch</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+        <section class="Location">
+            <span class="label">Location</span>
+            <h2>UMT</h2>
+            <p>Kuala Nerus, Terengganu, MY<br>12:45 PM GMT+8</p>
+        </section>
 
-    <footer>
-        <p>&copy; 2025 [Your Name]. All rights reserved.</p>
-    </footer>
+        <section class="Subject">
+            <span class="label">Core Subjects</span>
+    
+            <div class="tag-list">
+                <span class="tag">Soil Science</span>
+                <span class="tag">Microbiology</span>
+                <span class="tag">Science Computer and Aplication</span>
+             
+            </div>
+        </section>
+
+        <!-- <section class="Why Agrotechnology Plant Science are importan?"> -->
+            <span class="Agrotechnology Plant Science are important to increase agricultural yield and ensure food security."Lab</span>
+            <h2></h2>
+        </section>
+
+        <section class="hobby">
+            <span class="label">Activity</span>
+            <h2>Sleep</h2>
+        </section>
+
+     
+                <div>
+                    <p style="color: var(--text-main); font-weight: 600; margin: 0;">Lo-fi Study Sessions</p>
+                    <p style="margin: 0; font-size: 0.8rem;">Focus Beats • 2:45 / 3:30</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
 </body>
 </html>
-
